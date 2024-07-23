@@ -66,3 +66,29 @@ console.log(Object.entries(product));
                 //     [ 'color', 'red' ],
                 //     [ 'quality', 'good' ]
 // ]
+
+
+
+
+
+//4. Object.defineProperties method
+
+const animal = {
+    name : "dog",
+    color : "black"
+}
+
+Object.defineProperty(animal, 'name' , {writable: false}); // it happen only with specific key value pair like (name)
+animal.name = 'cat'; // updatation not allowed
+
+console.log(Object.entries(animal));
+
+Object.defineProperty(animal, 'color', {configurable: false}); // it happen only with specific key value pair like (color)
+delete animal.color; // deletion not allowed
+
+console.log(Object.entries(animal));
+
+// output --> [
+                //     [ 'name', 'dog' ],
+                //     [ 'color', 'black' ]
+// ]    

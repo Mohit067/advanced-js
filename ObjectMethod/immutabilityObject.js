@@ -34,12 +34,35 @@ console.log(Object.entries(obje)); // output --> [ [ 'x', 60 ], [ 'y', 30 ] ]
 
 
 
-//2. using Object.freeze method
-const obj = {
-    x : 20,
-    y : 30
+// //2. using Object.freeze method
+// const obj = {
+//     x : 20,
+//     y : 30
+// }
+// Object.freeze(obj);
+// obj.z = 49; // cannot add in obj
+// obj.x = 60; // cannot update in obj
+// console.log(Object.entries(obj));  // output --> [ [ 'x', 20 ], [ 'y', 30 ] ]
+
+
+
+
+
+//3.  Object.preventExtensions method
+const product = {
+    name : "i phone 14 pro max",
+    company : "Apple",
+    price : 124000,
+    color : "red"
 }
-Object.freeze(obj);
-obj.z = 49; // cannot add in obj
-obj.x = 60; // cannot update in obj
-console.log(Object.entries(obj));  // output --> [ [ 'x', 20 ], [ 'y', 30 ] ]
+Object.preventExtensions(product);
+product.quality = "good"; // cannot add anything in object
+delete product.name; // we can delete in object
+console.log(Object.entries(product)); 
+
+// output --> [
+                //     [ 'company', 'Apple' ],
+                //     [ 'price', 124000 ],
+                //     [ 'color', 'red' ],
+                //     [ 'quality', 'good' ]
+// ]

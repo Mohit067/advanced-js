@@ -7,3 +7,10 @@
 
 // output -->
 // IIFE calling ... 10
+
+
+
+// Example
+(   function cube(x) {
+        console.log(x**3);
+    }    )(10)

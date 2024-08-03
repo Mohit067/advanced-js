@@ -26,15 +26,20 @@ class product {
                 return this;
             }
             build(){
-                return new  product(this);
+                return new product(this);
             }
         }
-        return builder;
+        return new builder (); // attention here
     }
 }
-let p = new product.builder()
-                   .setPrice(2999) 
-                   .setName("iphone15")
-                   .build();
+        
+
+const  p = product.builder // attention here
+        .setName("mohit")
+        .setPrice(2344020344)
+        .build();
+
+        
 p.displayProduct();
+
 

@@ -22,3 +22,4 @@ class Product {
 console.log(typeof(Product)); 
 
 // output --> function
+

@@ -1,0 +1,3 @@
+class emptyClass {
+    // code here
+}

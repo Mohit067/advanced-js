@@ -25,8 +25,8 @@ const pr = new Promise (function prCB(res , rej){
     }, 3000)
 });
 
-pr.then(function f(){console.log("execute f")}, function g() {console.log("execute g")})
-pr.then(function h(){console.log("execute h")}, function i() {console.log("execute i")})
+pr.then(function f(v){console.log("execute f",v)}, function g(v) {console.log("execute g",v)})
+pr.then(function h(v){console.log("execute h",v)}, function i(v) {console.log("execute i",v)})
 
 for(let i=0; i<10000000000; i++){}
 console.log("end");

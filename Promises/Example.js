@@ -31,6 +31,9 @@ function upload(fileName,url){
     });
 }
 
+/*
+//  1st way 
+
 const p2 = download("www.example.com")
 .then(function f(value){
     console.log("download data");
@@ -44,5 +47,25 @@ const p3 = p2.then(function g(value){
 })
 
 p3.then(function h(value){
+    console.log("upload file", value);
+})
+
+*/
+
+
+
+
+//   another way to 
+//  .then chaning
+
+download("www.example.com").then(function f(value){
+    console.log("download data");
+    return writeFile(value, "ms.txt")
+})
+.then(function g(value){
+    console.log("file wrtten", value);
+    return upload("ms.txt","www.example1.com");
+})
+.then(function h(value){
     console.log("upload file", value);
 })
